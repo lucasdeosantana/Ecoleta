@@ -16,7 +16,6 @@ const CreatePoint: React.FC = () => {
     async function handleSubmit(event:FormEvent){
         event.preventDefault()
         await api.post('points', pointData).then( response =>{
-            console.log(response)
         })
     }
 

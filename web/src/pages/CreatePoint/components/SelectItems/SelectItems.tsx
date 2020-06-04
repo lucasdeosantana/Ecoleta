@@ -28,7 +28,6 @@ const SelectItems: React.FC = () => {
             setitemsSelected([...itemsSelected, id])
             context.items=[...itemsSelected, id]
         }
-        console.log(context)
     }
 
   return(
