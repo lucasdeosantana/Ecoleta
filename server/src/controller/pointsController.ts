@@ -9,8 +9,8 @@ class PointsController{
         const points = await knex('points')
             .join('point_items', 'points.id', '=', 'point_items.point_id')
             .whereIn('point_items.item_id', parsedItems)
-            .where('city', String(city))
-            .where('uf', String(uf))
+            .where('city', String(city).toLowerCase())
+            .where('uf', String(uf).toLowerCase())
             .distinct()
             .select('points.*') 
 
@@ -18,13 +18,17 @@ class PointsController{
     }
     async create(request:Request, response:Response){
             const { name, email,  whatsapp, latitude,
-                logitude, city,  uf,   items } = request.body
+                longitude, city,  uf,   items } = request.body
         
             const trx = await knex.transaction()
-        
             const point_ids = await trx('points').insert({
-                name,  email,  whatsapp,   latitude,
-                logitude, city, uf, 
+                name:String(name).toLowerCase(),  
+                email:String(email).toLowerCase(),
+                whatsapp:String(whatsapp).toLowerCase(),
+                latitude:String(latitude).toLowerCase(),
+                longitude:String(longitude).toLowerCase(),
+                city:String(city).toLowerCase(),
+                uf:String(uf).toLowerCase(), 
                 image:"https://picsum.photos/500/500"})
         
             const point_id = point_ids[0]
