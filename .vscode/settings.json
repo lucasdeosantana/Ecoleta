@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "${workspaceFolder:NextLevelWeek}/server/src/database/db.sqlite",
+            "driver": "SQLite",
+            "name": "NextWeekSql",
+            "previewLimit": 50
+        }
+    ]
+}
