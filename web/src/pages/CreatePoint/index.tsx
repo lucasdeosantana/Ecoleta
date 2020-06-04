@@ -4,7 +4,7 @@ import Maps  from "./components/Maps";
 import UfCity from './components/UfCity'
 import ContactData from './components/ContactData'
 import SelectItems from './components/SelectItems'
-import api from '../../services/api';
+import api from '../../services/api'
 import './styles.css';
 import contextCreatePoint from "./context";
 
