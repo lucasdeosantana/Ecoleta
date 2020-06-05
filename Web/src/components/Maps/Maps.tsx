@@ -1,7 +1,7 @@
 import { Map, Marker, TileLayer } from "react-leaflet";
 import React, { useEffect, useState, useContext }  from 'react';
 import { LeafletMouseEvent } from "leaflet";
-import contextCreatePoint from '../../context'
+import contextCreatePoint from '../../pages/CreatePoint/context'
 
 const Maps: React.FC = () => {
   const context = useContext(contextCreatePoint)

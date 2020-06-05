@@ -1,5 +1,5 @@
 import React, { useContext, ChangeEvent, useState } from 'react';
-import contextCreatePoint from '../../context'
+import contextCreatePoint from '../../pages/CreatePoint/context'
 
 const ContactData: React.FC = () => {
 

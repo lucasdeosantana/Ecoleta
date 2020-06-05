@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import contextCreatePoint from "../../context";
-import api from '../../../../services/api'
+import contextCreatePoint from "../../pages/CreatePoint/context";
+import api from '../../services/api'
 
 interface Item{
     id:number,

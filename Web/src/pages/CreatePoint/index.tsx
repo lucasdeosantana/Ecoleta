@@ -1,9 +1,9 @@
 import React,  { FormEvent, useContext }  from 'react';
-import Header from "./components/Header"
-import Maps  from "./components/Maps";
-import UfCity from './components/UfCity'
-import ContactData from './components/ContactData'
-import SelectItems from './components/SelectItems'
+import Header from "../../components/Header"
+import Maps  from "../../components/Maps";
+import UfCity from '../../components/UfCity'
+import ContactData from '../../components/ContactData'
+import SelectItems from '../../components/SelectItems'
 import api from '../../services/api'
 import './styles.css';
 import contextCreatePoint from "./context";
@@ -39,8 +39,10 @@ const CreatePoint: React.FC = () => {
             </fieldset>
             <fieldset>
                 <legend>
-                    <h2>Itens de Coleta</h2>
-                    <span>Selecione os items recebidos.</span>
+                    <div className="d-flex-betweeen">
+                        <h2>Itens de Coleta</h2>
+                        <span>Selecione os items recebidos.</span>
+                    </div>
                 </legend>
                 <SelectItems />
             </fieldset>

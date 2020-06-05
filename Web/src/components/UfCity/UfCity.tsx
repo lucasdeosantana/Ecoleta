@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect, ChangeEvent} from 'react';
 import axios from 'axios'
-import contextCreatePoint from '../../context'
+import contextCreatePoint from '../../pages/CreatePoint/context'
 interface IBGEResponse{
     sigla:string
 }
