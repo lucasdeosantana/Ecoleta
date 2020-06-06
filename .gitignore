@@ -121,3 +121,6 @@ web-report/
 
 # macOS
 .DS_Store
+
+*.png
+*.jpg
