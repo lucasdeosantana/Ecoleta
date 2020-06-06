@@ -8,6 +8,7 @@ interface CreatePointsFields{
     latitude:number
     longitude:number
     items:number[]
+    image:File | undefined
 }
 const contextCreatePoint = createContext<CreatePointsFields>({
     name:"",
@@ -17,6 +18,7 @@ const contextCreatePoint = createContext<CreatePointsFields>({
     city:"",
     latitude:0,
     longitude:0,
-    items:[]
+    items:[],
+    image:undefined
 })
 export default contextCreatePoint
