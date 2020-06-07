@@ -11,10 +11,11 @@ import { citiesResponseI } from '../../interfaces/backendInterfaces'
 const Home = ()=>{
     
     const [citySelected, setCitySelected] = useState<citiesResponseI>({} as citiesResponseI)
+    const [uf, setUf] = useState("0")
     const navigation = useNavigation()
     
     function handNavigation(){
-        navigation.navigate("Points", {citySelected})
+        navigation.navigate("Points", {citySelected, uf})
     }
 
     return(
@@ -28,7 +29,7 @@ const Home = ()=>{
                   de coleta de forma eficiente</Text>
             </View>
             <View>
-                <PickerUfCity setCitySelected={setCitySelected} citySelected={citySelected} />
+                <PickerUfCity setCitySelected={setCitySelected} citySelected={citySelected} setUf={setUf} />
             </View>
             <View style={styles.footer}>
                 <RectButton style={styles.button} onPress={handNavigation}>

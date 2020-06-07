@@ -6,11 +6,12 @@ import { ufResponseI, citiesResponseI } from '../../interfaces/backendInterfaces
 
 interface propsI{
     citySelected:citiesResponseI
+    setUf:(value:string)=>void
     setCitySelected:(value:citiesResponseI)=>void
 }
 
 
-const PickerUfCity: React.FC<propsI> = ({citySelected, setCitySelected}) => {
+const PickerUfCity: React.FC<propsI> = ({citySelected, setCitySelected, setUf}) => {
     const [ufSelected, setUfSelected] = useState("0")
     const [ufsList, setUfsList] = useState<ufResponseI[]>([])
     const [citiesName, setCitiesName] = useState<citiesResponseI[]>([])
@@ -22,8 +23,9 @@ const PickerUfCity: React.FC<propsI> = ({citySelected, setCitySelected}) => {
         api.get<citiesResponseI[]>(`cities/${ufSelected}`)
         .then(response =>{
             const citiesResponse =  response.data
-            setCitiesName(citiesResponse)
-    })}, [ufSelected])
+            setCitiesName(citiesResponse)})
+        setUf(ufSelected)
+        }, [ufSelected])
 
     useEffect(()=>{
         api.get<ufResponseI[]>('uf')
