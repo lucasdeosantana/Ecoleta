@@ -9,30 +9,33 @@ import DimmingScreen from '../../components/DimmingScreen'
 import api from '../../services/api'
 import './styles.css';
 import contextCreatePoint from "./context";
-import contextSetCity from '../../context/context'
-import { ufCityI } from '../../interfaces/appInterfaces'
+import { ufCityI, contactDataI } from '../../interfaces/appInterfaces'
 
 const CreatePoint: React.FC = () => {
 
     const [city, setcity] = useState<ufCityI>({uf:'', city:''})
+    const [contactData, setContactData] = useState<contactDataI>({name:'', email:'', whatsapp:''})
+    const [latLong, setLatLong] = useState<[number, number]>([0,0])
     const [sucess, setSucess] = useState(false)
-
+    const [items, setItems] = useState<number[]>([])
+    const [image, setImage] = useState<File>()
     const pointData = useContext(contextCreatePoint)
+
     async function handleSubmit(event:FormEvent){
         event.preventDefault()
         const data = new FormData()
-        data.append('name', pointData.name)
-        data.append('email', pointData.email)
-        data.append('whatsapp', pointData.whatsapp)
-        data.append('city', pointData.city)
-        data.append('uf', pointData.uf)
-        data.append('latitude', String(pointData.latitude))
-        data.append('longitude', String(pointData.longitude))
-        data.append('items', pointData.items.join(','))
-        if(pointData.image!==undefined){
-            data.append('image', pointData.image)
+        data.append('name', contactData.name)
+        data.append('email', contactData.email)
+        data.append('whatsapp', contactData.whatsapp)
+        data.append('city', city.city)
+        data.append('uf', city.uf)
+        data.append('latitude', String(latLong[0]))
+        data.append('longitude', String(latLong[1]))
+        data.append('items', items.join(','))
+        if(image){
+            data.append('image', image)
         }
-
+        console.log(city, contactData, latLong, items, image)
         await api.post('points', data).then( response =>{
                 if(response.status=200){
                     setSucess(true)
@@ -51,8 +54,8 @@ const CreatePoint: React.FC = () => {
                 Cadastro de Pontos de Coletas
             </h1>
 
-            <DropZone />
-            <ContactData />
+            <DropZone setFile={setImage}/>
+            <ContactData data={contactData} setData={setContactData} />
             <fieldset>
                 <legend>
                     <div className="d-flex-betweeen">
@@ -61,7 +64,7 @@ const CreatePoint: React.FC = () => {
                     </div>
                 </legend>   
                 <UfCity ufCity={city} setCity={setcity} />
-                <Maps ufCity={city} setCity={setcity} />
+                <Maps ufCity={city} setCity={setcity} setLatLon={setLatLong}/>
             </fieldset>
             <fieldset>
                 <legend>
@@ -70,7 +73,7 @@ const CreatePoint: React.FC = () => {
                         <span>Selecione os items recebidos.</span>
                     </div>
                 </legend>
-                <SelectItems />
+                <SelectItems setItems={setItems} />
             </fieldset>
             <button type="submit">
                 Cadastrar Ponto de Coleta

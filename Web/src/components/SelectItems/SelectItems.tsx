@@ -1,17 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
-import contextCreatePoint from "../../pages/CreatePoint/context";
 import api from '../../services/api'
+import { itemsInterface } from "../../interfaces/backendInterfaces";
+import { propsSelectItemsI } from "../../interfaces/appInterfaces";
+const SelectItems: React.FC<propsSelectItemsI> = ({ setItems }) => {
 
-interface Item{
-    id:number,
-    title:string,
-    image_url:string
-}
-
-const SelectItems: React.FC = () => {
-    const context = useContext(contextCreatePoint)
-
-    const [items, setitems] = useState<Item[]>([])
+    const [items, setitems] = useState<itemsInterface[]>([])
     const [itemsSelected, setitemsSelected] = useState<number[]>([])
 
     useEffect(()=>{
@@ -22,11 +15,11 @@ const SelectItems: React.FC = () => {
         const allreadySelectedItem = itemsSelected.findIndex(item=> item === id)
         if(allreadySelectedItem >= 0 ){
             const filteredItems = itemsSelected.filter(item=>item!==id)
-            context.items=filteredItems
             setitemsSelected(filteredItems)
+            setItems(filteredItems)
         }else{
             setitemsSelected([...itemsSelected, id])
-            context.items=[...itemsSelected, id]
+            setItems([...itemsSelected, id])
         }
     }
 
