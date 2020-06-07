@@ -4,6 +4,12 @@
     margin: 0 auto;
     background-color:
 }
+#page-find-point .points-find{
+    margin-top: 50px;
+    padding-left: 20px;
+    font-family: 'ubuntu';
+    font-size: 20px;
+}
 #page-find-point .points-card {
     margin-top: 100px;
     display: flex;

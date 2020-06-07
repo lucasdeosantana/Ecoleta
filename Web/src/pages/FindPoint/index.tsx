@@ -34,12 +34,8 @@ const FindPoint: React.FC<RouteChildrenProps> = (props) => {
       <div id="page-find-point">
         <Header />
         <div className="white-background" />
+        <p className='points-find'><strong>{points.length}</strong> pontos foram encontrados.</p>
         <div className="points-card">
-        {points.map(point=>(<Card point={point} items={items} />))}
-        {points.map(point=>(<Card point={point} items={items} />))}
-        {points.map(point=>(<Card point={point} items={items} />))}
-        {points.map(point=>(<Card point={point} items={items} />))}
-        {points.map(point=>(<Card point={point} items={items} />))}
         {points.map(point=>(<Card point={point} items={items} />))}
         </div>
       </div>
