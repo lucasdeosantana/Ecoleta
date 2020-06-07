@@ -9,6 +9,7 @@ interface CreatePointsFields{
     longitude:number
     items:number[]
     image:File | undefined
+    
 }
 const contextCreatePoint = createContext<CreatePointsFields>({
     name:"",

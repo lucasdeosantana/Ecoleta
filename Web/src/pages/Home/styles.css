@@ -18,8 +18,24 @@
   
 #page-home .content header {
     margin: 48px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
-  
+
+#page-home .content header span{
+  color: #2FB86E;
+  padding-right: 15px;
+}
+#page-home .content header a{
+  display: flex;
+  color: #322153;
+}
+#page-home .content header span svg{
+  height: 24px;
+  width: 24px;
+}
 #page-home .content main {
     flex: 1;
     max-width: 560px;
