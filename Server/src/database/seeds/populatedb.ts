@@ -1,4 +1,6 @@
 import Knex from 'knex'
+import fs from 'fs'
+import path from 'path'
 
 export async function seed(knex:Knex){
     await knex("items").insert([
