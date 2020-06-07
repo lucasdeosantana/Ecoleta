@@ -22,6 +22,7 @@ interface dataInterface{
     uf: string
     latitude: number
     longitude: number
+    imageUrl:string
   },
   items:[{
     id:number
@@ -62,7 +63,7 @@ function Details(){
           <TouchableOpacity onPress={handleNavigationBack}>
             <Icon name="arrow-left" size={20} color="#34cb79" />
           </TouchableOpacity>
-          <Image style={styles.pointImage} source={{uri:data.point.image}} />
+          <Image style={styles.pointImage} source={{uri:data.point.imageUrl}} />
           <Text style={styles.pointName}>{data.point.name.charAt(0).toUpperCase() + data.point.name.slice(1)}</Text>
           <Text style={styles.pointItems}>{data.items.map(itemstoPoint=>itemstoPoint.title).join(', ')}</Text>
           <View style={styles.address}>
