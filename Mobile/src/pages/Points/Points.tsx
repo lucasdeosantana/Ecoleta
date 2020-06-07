@@ -11,6 +11,7 @@ import { itemsInterface, pointsInterface, citiesResponseI } from '../../interfac
 
 interface paramsI{
   citySelected:citiesResponseI
+  uf:string
 }
 
 const Points: React.FC = () => {
@@ -32,7 +33,10 @@ const Points: React.FC = () => {
   useEffect(() => {
     api.get('points',{
       params:{
-        items:itemsSelected }
+        items:itemsSelected,
+        city:params.citySelected.name,
+        uf:params.uf
+      }
     }).then(response=>{
       setPointsList(response.data)
     })
