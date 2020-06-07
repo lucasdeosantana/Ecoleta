@@ -1,66 +1,57 @@
 import React, {useState, useContext, useEffect, ChangeEvent} from 'react';
-import axios from 'axios'
-import contextCreatePoint from '../../pages/CreatePoint/context'
-interface IBGEResponse{
-    sigla:string
-}
-interface IBGECityResponse{
-    nome:string
-}
+import { ufResponseI, citiesResponseI  } from '../../interfaces/backendInterfaces'
+import api from '../../services/api'
+import { prospsUfCityI } from '../../interfaces/appInterfaces';
 
-const UfCity: React.FC = () => {
-    const [ufs, setufs] = useState<string[]>([])
-    const [citiesName, setcitiesName] = useState<string[]>([])
-    const [ufSelected, setufSelected] = useState('0')
-    const [citySelected, setcitySelected] = useState('0')
 
-    const context = useContext(contextCreatePoint)
+const UfCity: React.FC<prospsUfCityI> = ({ setCity, ufCity }) => {
+
+    const [ufsList, setUfsList] = useState<ufResponseI[]>([])
+    const [citiesName, setCitiesName] = useState<citiesResponseI[]>([])
 
     useEffect(() => {
-        if(ufSelected==="0"){
+        if(ufCity.uf===""){
             return;
         }
-        axios.get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufSelected}/municipios`)
+        api.get<citiesResponseI[]>(`cities/${ufCity.uf}`)
         .then(response =>{
-            const citiesResponse =  response.data.map(city=>city.nome)
-            setcitiesName(citiesResponse)
-        })}, [ufSelected])
-
+            const citiesResponse =  response.data
+            setCitiesName(citiesResponse)
+    })}, [ufCity])
 
     useEffect(()=>{
-        axios.get<IBGEResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
-            .then(response =>{
-                const ufInitials = response.data.map(uf => uf.sigla)
-                setufs(ufInitials)
-            })},[])
+        api.get<ufResponseI[]>('uf')
+            .then((response) =>{
+                const ufInitials = response.data
+                setUfsList(ufInitials)
+            })
+    },[])
 
 
     function handleSelectUf(event:ChangeEvent<HTMLSelectElement>){
-        setufSelected(event.target.value)
-        context.uf = event.target.value
+        setCity({uf:event.target.value, city:""})
     }
     function handleSelectCity(event:ChangeEvent<HTMLSelectElement>){
-        setcitySelected(event.target.value)
-        context.city=event.target.value
+        setCity({...ufCity, city:event.target.value})
     }
 
   return (
     <div className="field-group">
         <div className="field">
             <label htmlFor="uf">Estado (uf)</label>
-            <select name="uf" id="uf" value={ufSelected} onChange={handleSelectUf} required>
+            <select name="uf" id="uf" value={ufCity.uf} onChange={handleSelectUf} required>
                 <option value="">Selecione seu Estado</option>
-                {ufs.map(uf =>(
-                    <option key={uf} value={uf}>{uf}</option>
+                {ufsList.map(uf =>(
+                    <option key={uf.codigo_uf} value={uf.uf}>{uf.name}</option>
                 ))}
             </select>
         </div>
         <div className="field">
             <label htmlFor="city">Cidade</label>
-            <select name="city" id="city" value={citySelected} onChange={handleSelectCity} required>
+            <select name="city" id="city" value={ufCity.city} onChange={handleSelectCity} required>
                 <option value="">Selecione sua Cidade</option>
                 {citiesName.map(city =>(
-                    <option key={city} value={city}>{city}</option>
+                    <option key={city.codigo_ibge} value={city.name}>{city.name}</option>
                 ))}
             </select>
         </div>
