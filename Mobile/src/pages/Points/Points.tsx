@@ -2,25 +2,15 @@ import React, {useState, useEffect} from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
 import styles from './styles';
 import { Feather as Icon } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import MapView, {Marker} from "react-native-maps";
 import { SvgUri } from "react-native-svg";
 import api from '../../services/api'
 import * as Location from "expo-location"
+import { itemsInterface, pointsInterface, citiesResponseI } from '../../interfaces/backendInterfaces'
 
-
-interface itemsInterface{
-  id:number
-  title:string
-  image_url:string
-}
-
-interface pointsInterface{
-  id:number
-  name:string
-  image:string
-  latitude:number
-  longitude:number
+interface paramsI{
+  citySelected:citiesResponseI
 }
 
 const Points: React.FC = () => {
@@ -30,6 +20,8 @@ const Points: React.FC = () => {
   const [initialPosition, setInitialPosition] = useState<[number, number]>([-23.5475000, -46.6361100])
   const [pointsList, setPointsList] = useState<pointsInterface[]>([])
   const navigation = useNavigation();
+  const route = useRoute()
+  const params = route.params as paramsI
 
   useEffect(() => {
     api.get('/items').then(response =>{
@@ -58,6 +50,7 @@ const Points: React.FC = () => {
       const {latitude, longitude} = location.coords
       setInitialPosition([latitude, longitude])
     }
+    setInitialPosition([params.citySelected.latitude, params.citySelected.longitude])
     loadPosition()
   },[])
 
@@ -76,6 +69,7 @@ const Points: React.FC = () => {
         setitemsSelected([...itemsSelected, id])
     }
   }
+
   return(
     <>
       <View style={styles.container}>
@@ -101,7 +95,7 @@ const Points: React.FC = () => {
                 }}
                 onPress={()=>handleNavigationToDetail(point.id)}>
                   <View style={styles.mapMarkerContainer}>
-                    <Image style={styles.mapMarkerImage} source={{uri:point.image}}/>
+                    <Image style={styles.mapMarkerImage} source={{uri:point.imageUrl}}/>
                     <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                   </View>
                 </Marker>
