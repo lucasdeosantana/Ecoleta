@@ -1,17 +1,20 @@
-import React from 'react';
-import { View, Image, Text, ImageBackground, } from 'react-native';
+import React, { useState } from 'react';
+import { View, Image, Text, ImageBackground } from 'react-native';
 import { RectButton } from "react-native-gesture-handler";
 import { Feather as Icon } from "@expo/vector-icons";
 import styles from './styles'
 import { useNavigation } from '@react-navigation/native'
+import PickerUfCity from '../../components/PickerUfCity'
+import { citiesResponseI } from '../../interfaces/backendInterfaces'
 
 
 const Home = ()=>{
     
+    const [citySelected, setCitySelected] = useState<citiesResponseI>({} as citiesResponseI)
     const navigation = useNavigation()
-
+    
     function handNavigation(){
-        navigation.navigate("Points")
+        navigation.navigate("Points", {citySelected})
     }
 
     return(
@@ -23,6 +26,9 @@ const Home = ()=>{
               <Text style={styles.title}>Seu Marketplace de coleta de resíduos.</Text>
               <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos
                   de coleta de forma eficiente</Text>
+            </View>
+            <View>
+                <PickerUfCity setCitySelected={setCitySelected} citySelected={citySelected} />
             </View>
             <View style={styles.footer}>
                 <RectButton style={styles.button} onPress={handNavigation}>
