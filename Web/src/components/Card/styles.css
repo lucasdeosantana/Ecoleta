@@ -1,0 +1,87 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin:20px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0 );
+    box-shadow: 10px 10px 20px 1px #888888;
+    border-radius: 10px;
+}
+.card img{
+    width: auto;
+    height: 250px;
+    margin-bottom: 0px;
+}
+.card h2{
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.card .card-body{
+    padding-left: 5px;
+    margin-top: 0px;
+}
+.card .card-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 7px;
+}
+.card .card-item img{
+    height: auto;
+    width: 40px;
+}
+ /* Tooltip container */
+.card .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+  
+  /* Tooltip text */
+.card .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+  /* Tooltip arrow */
+.card .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+.card .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+} 
+.card h3{
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
