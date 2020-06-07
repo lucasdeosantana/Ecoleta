@@ -1,0 +1,24 @@
+.dimming{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 99999;
+}
+.dimming svg{
+    height: auto;
+    width: 70px;
+    color: #2FB86E;
+}
+.dimming label{
+    padding-left: 15px;
+    font-size: 20px;
+    font-family: 'Ubuntu';
+    color: #fff;
+}
