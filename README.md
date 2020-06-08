@@ -5,9 +5,9 @@ Ecoleta é um aplicativo de encontro de pontos de coletas! Sendo desenvolvido pa
 
 ## Tecnologias Usadas
 
-![Typescript](https://img.icons8.com/color/48/000000/typescript.png)
-![ReactJS e React Native](https://img.icons8.com/ultraviolet/40/000000/react.png)
-
+![Typescript](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-typescript.svg)
+![ReactJS e React Native](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-reagir.svg)
+![NodeJs](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-npm.svg)
 
 
 
