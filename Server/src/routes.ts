@@ -12,6 +12,9 @@ const items =  new itemsControler()
 const ufs = new LocalizationControler()
 const upload = multer(multerConfig) 
 
+router.get('/keepalive',(request, response)=>{
+    console.log('keepAlive')
+    response.send(true)})
 router.get('/items', items.index)
 router.get('/uf/', ufs.ufsIndex)
 router.get('/cities/:uf', ufs.citiesIndex)
