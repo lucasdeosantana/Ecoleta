@@ -122,5 +122,5 @@ web-report/
 # macOS
 .DS_Store
 
-*.png
-*.jpg
+server/static/image/upload/*.png
+server/static/image/upload/*.jpg
