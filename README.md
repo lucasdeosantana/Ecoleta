@@ -9,7 +9,18 @@ Ecoleta é um aplicativo de encontro de pontos de coletas! Sendo desenvolvido pa
 ![ReactJS e React Native](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-reagir.svg)
 ![NodeJs](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-npm.svg)
 
+## Instalação
 
+Em Construção.
+
+## Contribuição
+
+Pull Requests são bem vindos, para maiores mudanças solicitamos a abertura de uma issue para discutir as mudanças desejadas. 
+
+
+## Licença
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 
