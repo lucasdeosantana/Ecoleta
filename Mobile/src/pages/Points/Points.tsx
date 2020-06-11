@@ -83,8 +83,7 @@ const Points: React.FC = () => {
         <Text style={styles.title}>Bem Vindo.</Text>
         <Text style={styles.description}>Encontre no Mapa um ponto de coleta.</Text>
         <View style={styles.mapContainer}>
-          <MapView style={styles.map} 
-          loadingEnabled={initialPosition[0]===-23.5475000}
+          <MapView style={styles.map}
           initialRegion={{
             latitude:initialPosition[0],
             longitude: initialPosition[1],

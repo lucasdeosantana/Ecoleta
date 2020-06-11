@@ -7,6 +7,9 @@
       "android",
       "web"
     ],
+    "packagerOpts": {
+      "sourceExts": ["js", "ts", "tsx", "jsx"]
+  },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,8 +28,14 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.lcsnlw.ecoleta",
-      "versionCode": 1
+      "package": "com.CompanyName.AppName",
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "Your api Key"
+        }
+      }
+
     }
   }
 }

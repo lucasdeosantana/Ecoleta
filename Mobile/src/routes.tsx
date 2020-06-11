@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-import { NavigationContainer } from "@react-navigation/native"
+import 'react-native-gesture-handler'
+import '@react-native-community/masked-view'
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack'
+import { NavigationContainer } from "@react-navigation/native"
 import Home from './pages/Home'
 import Points from './pages/Points'
 import Details from './pages/Details'
 import UrlSearch from './pages/UrlSearch';
-import { AsyncStorage } from 'react-native';
 
 interface propsI{
     selectFirstScreen:boolean
@@ -15,8 +16,7 @@ const AppStack = createStackNavigator()
 
 
 const  Routes: React.FC<propsI> = ({ selectFirstScreen }) => {
-
-  return(
+  return( 
       <NavigationContainer>
         <AppStack.Navigator headerMode="none" screenOptions={{cardStyle:{
           backgroundColor: "#f0f0f5",

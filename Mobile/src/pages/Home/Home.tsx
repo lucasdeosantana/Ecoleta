@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+import '@react-native-community/masked-view'
 import React, { useState } from 'react';
 import { View, Image, Text, ImageBackground } from 'react-native';
 import { RectButton } from "react-native-gesture-handler";
