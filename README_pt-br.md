@@ -1,19 +1,19 @@
 # Ecoleta
-![Ecoleta Apresentação](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/Ecoleta%20-%20Web%20Home%20%2B%20Mobile%20Home.png)
-![Pagina Home Mobile + Web para ver mais click aqui!](https://github.com/lucasdeosantana/Ecoleta/tree/master/Images)
+[Ecoleta Apresentação](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/Ecoleta%20-%20Web%20Home%20%2B%20Mobile%20Home.png)
+[Pagina Home Mobile + Web para ver mais click aqui!](https://github.com/lucasdeosantana/Ecoleta/tree/master/Images)
 Ecoleta é um aplicativo de encontro de pontos de coletas! Sendo desenvolvido para versão Web e Mobile utilizando ReactJS e React Native. Também desenvolvido um servidor Rest utilizando Nodejs e Express.
 
 ## Tecnologias Usadas
 
-![Typescript](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-typescript.svg)
-![ReactJS e React Native](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-reagir.svg)
-![NodeJs](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-npm.svg)
+[Typescript](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-typescript.svg)
+[ReactJS e React Native](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-reagir.svg)
+[NodeJs](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-npm.svg)
 
 ## Requisitos
 
 Para a instalação do pacote é necessário o nodejs, sua instalação pode ser encontrada no link abaixo:
 
-[NodeJs](https://nodejs.org/en/download/) @12.16.3 Ultima versão testada.
+![NodeJs](https://nodejs.org/en/download/) @12.16.3 Ultima versão testada.
 
 ## Instalação
 
@@ -42,7 +42,7 @@ BASE_URL: Determina qual a url base do sistema, caso você deseje publicar esse 
 
 Se você deseja testar o mobile sem instalar o app em seu celular recomendamos a seguinte utilização:
 
-Primeiro baixe o aplicativo [Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR), esse aplicativo está disponível nas lojas de aplicativos padrões, e instale o  [Expo-cli](https://docs.expo.io/workflow/expo-cli/) e com o seguinte comando:
+Primeiro baixe o aplicativo ![Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR), esse aplicativo está disponível nas lojas de aplicativos padrões, e instale o ![Expo-cli](https://docs.expo.io/workflow/expo-cli/) e com o seguinte comando:
 
 ```bash
 npm install -g expo-cli
@@ -65,10 +65,10 @@ Pull Requests são bem vindos, para maiores mudanças solicitamos a abertura de 
 
 ## Licença
 
-[MIT](https://choosealicense.com/licenses/mit/)
+![MIT](https://choosealicense.com/licenses/mit/)
 
 
 
 
-
+Itens externos.
 ![Icons by Icons8](https://icons8.com/)

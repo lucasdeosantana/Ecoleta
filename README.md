@@ -1,6 +1,6 @@
 # Ecoleta
-![Ecoleta Apresentation](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/Ecoleta%20-%20Web%20Home%20%2B%20Mobile%20Home.png)
-![Page Home Mobile + Web to see more click here!](https://github.com/lucasdeosantana/Ecoleta/tree/master/Images)
+[Ecoleta Apresentation](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/Ecoleta%20-%20Web%20Home%20%2B%20Mobile%20Home.png)
+[Page Home Mobile + Web to see more click here!](https://github.com/lucasdeosantana/Ecoleta/tree/master/Images)
 
 Ecoleta is an application where people can find selective collect points! Was developed to use in Web and Mobile using ReactJS and React Native. Also was developed a server Rest with NodeJS and Express.
 <hr />
@@ -23,7 +23,7 @@ Ecoleta is an application where people can find selective collect points! Was de
 
 For the installation of the package nodejs is necessary, its installation can be found in the link below:
 
-[NodeJs](https://nodejs.org/en/download/) @12.16.3 Ultima versão testada.
+![NodeJs](https://nodejs.org/en/download/) @12.16.3 Ultima versão testada.
 
 ## Installation
 
@@ -74,7 +74,7 @@ Pull Requests are welcome, for bigger changes we request the opening of an issue
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+![MIT](https://choosealicense.com/licenses/mit/)
 
 
 
