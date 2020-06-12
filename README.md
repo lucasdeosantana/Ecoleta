@@ -7,7 +7,7 @@ Ecoleta is an application where people can find selective collect points! Was de
 
 
 ### Translations
-![Portuguese](https://github.com/lucasdeosantana/Ecoleta/blob/master/README_pt-br.md)
+[Portuguese](https://github.com/lucasdeosantana/Ecoleta/blob/master/README_pt-br.md)
 
 
 <hr />
