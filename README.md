@@ -1,11 +1,18 @@
 # Ecoleta
 ![Ecoleta Apresentation](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/Ecoleta%20-%20Web%20Home%20%2B%20Mobile%20Home.png)
 ![Page Home Mobile + Web to see more click here!](https://github.com/lucasdeosantana/Ecoleta/tree/master/Images)
+
 Ecoleta is an application where people can find selective collect points! Was developed to use in Web and Mobile using ReactJS and React Native. Also was developed a server Rest with NodeJS and Express.
 <hr />
+
+
 ### Translations
-![Portuguese]
+![Portuguese](https://github.com/lucasdeosantana/Ecoleta/blob/master/README_pt-br.md)
+
+
 <hr />
+
+
 ## Technologies Used
 
 ![Typescript](https://github.com/lucasdeosantana/Ecoleta/blob/master/Images/icons/icons8-typescript.svg)
