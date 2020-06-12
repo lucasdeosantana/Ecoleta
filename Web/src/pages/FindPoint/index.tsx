@@ -27,7 +27,7 @@ const FindPoint: React.FC<RouteChildrenProps> = (props) => {
         const itemsResponse = response.data.map(resp=>resp)
         setItems(itemsResponse)
       })
-  }, [])
+  })
 
 
   return(

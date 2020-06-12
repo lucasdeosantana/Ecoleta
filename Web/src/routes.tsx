@@ -1,4 +1,4 @@
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, BrowserRouter } from 'react-router-dom'
 import React from 'react';
 import Home from './pages/Home/index'
 import FindPoint from './pages/FindPoint'

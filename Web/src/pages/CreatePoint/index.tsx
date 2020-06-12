@@ -1,4 +1,4 @@
-import React,  { FormEvent, useContext, useState }  from 'react';
+import React,  { FormEvent, useState }  from 'react';
 import Header from "../../components/Header"
 import Maps  from "../../components/Maps";
 import UfCity from '../../components/UfCity'
@@ -8,7 +8,6 @@ import DropZone from '../../components/DropZone'
 import DimmingScreen from '../../components/DimmingScreen'
 import api from '../../services/api'
 import './styles.css';
-import contextCreatePoint from "./context";
 import { ufCityI, contactDataI } from '../../interfaces/appInterfaces'
 
 const CreatePoint: React.FC = () => {
@@ -19,7 +18,6 @@ const CreatePoint: React.FC = () => {
     const [sucess, setSucess] = useState(false)
     const [items, setItems] = useState<number[]>([])
     const [image, setImage] = useState<File>()
-    const pointData = useContext(contextCreatePoint)
 
     async function handleSubmit(event:FormEvent){
         event.preventDefault()
@@ -35,7 +33,6 @@ const CreatePoint: React.FC = () => {
         if(image){
             data.append('image', image)
         }
-        console.log(city, contactData, latLong, items, image)
         await api.post('points', data).then( response =>{
                 if(response.status=200){
                     setSucess(true)

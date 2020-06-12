@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import api from '../../services/api'
 import { itemsInterface } from "../../interfaces/backendInterfaces";
 import { propsSelectItemsI } from "../../interfaces/appInterfaces";

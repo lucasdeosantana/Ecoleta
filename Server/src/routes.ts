@@ -11,10 +11,13 @@ const point = new pointControler()
 const items =  new itemsControler()
 const ufs = new LocalizationControler()
 const upload = multer(multerConfig) 
-
+import path from 'path'
 router.get('/keepalive',(request, response)=>{
     console.log('keepAlive')
     response.send(true)})
+router.get('/', (request, response)=>{
+    response.sendFile(path.resolve(__dirname, '..', '..', 'Web', 'build', 'index.html'))
+})
 router.get('/items', items.index)
 router.get('/uf/', ufs.ufsIndex)
 router.get('/cities/:uf', ufs.citiesIndex)

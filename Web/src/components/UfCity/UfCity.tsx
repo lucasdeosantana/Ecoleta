@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect, ChangeEvent} from 'react';
+import React, {useState, useEffect, ChangeEvent} from 'react';
 import { ufResponseI, citiesResponseI  } from '../../interfaces/backendInterfaces'
 import api from '../../services/api'
 import { prospsUfCityI } from '../../interfaces/appInterfaces';

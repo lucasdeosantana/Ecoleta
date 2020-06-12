@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL:'http://192.168.3.107:3333'
+    baseURL:document.URL
 })
 
 export default api

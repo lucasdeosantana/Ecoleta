@@ -1,7 +1,6 @@
 import { LeafletMouseEvent } from "leaflet";
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Map, Marker, TileLayer } from "react-leaflet";
-import contextCreatePoint from '../../pages/CreatePoint/context';
 import api from '../../services/api';
 import { prospsMapsI } from "../../interfaces/appInterfaces";
 
